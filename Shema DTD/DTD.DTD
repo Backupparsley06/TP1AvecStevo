@@ -21,35 +21,35 @@
 <!ATTLIST Artery
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	startRadius CDATA #REQUIRED
+	startRadius CDATA #IMPLIED
 	endRadius CDATA #IMPLIED
-	length CDATA #REQUIRED
+	length CDATA #IMPLIED
 >
 <!ELEMENT Vein EMPTY>
 <!ATTLIST Vein
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	startRadius CDATA #REQUIRED
+	startRadius CDATA #IMPLIED
 	endRadius CDATA #IMPLIED
-	length CDATA #REQUIRED
+	length CDATA #IMPLIED
 >
 <!ELEMENT Capillaries EMPTY>
 <!ATTLIST Capillaries
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT Atrium EMPTY>
 <!ATTLIST Atrium
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT Ventricle EMPTY>
 <!ATTLIST Ventricle
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT Nose EMPTY>
 <!ATTLIST Nose
@@ -60,43 +60,43 @@
 <!ATTLIST AirConnectible 
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	startRadius CDATA #REQUIRED
-	endRadius CDATA #REQUIRED
-	length CDATA #REQUIRED
+	startRadius CDATA #IMPLIED
+	endRadius CDATA #IMPLIED
+	length CDATA #IMPLIED
 >
 <!ELEMENT Atrium EMPTY>
 <!ATTLIST Alveoli
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT DigestiveTract EMPTY>
 <!ATTLIST DigestiveTract
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	length CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	length CDATA #IMPLIED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT StomachTract EMPTY>
 <!ATTLIST StomachTract 
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	length CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	length CDATA #IMPLIED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT DuodenumTract EMPTY>
 <!ATTLIST DuodenumTract
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	length CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	length CDATA #IMPLIED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT RectumTract EMPTY>
 <!ATTLIST RectumTract
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	length CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	length CDATA #IMPLIED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT BiDuct EMPTY>
 <!ATTLIST BiDuct
@@ -127,8 +127,8 @@
 <!ATTLIST SalivaryDuct
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
-	length CDATA #REQUIRED
-	volume CDATA #REQUIRED
+	length CDATA #IMPLIED
+	volume CDATA #IMPLIED
 >
 <!ELEMENT Connections (Connection)*>
 <!ELEMENT Connection (to)*>
