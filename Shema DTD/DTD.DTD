@@ -16,7 +16,7 @@
 	name CDATA #REQUIRED
 	id CDATA #REQUIRED
 >
-<!ELEMENT Connectible (Artery, Vein, Capillaries, Atrium, Ventricle, Nose, AirConnectible, Alveoli, DigestiveTract, StomachTract, DuodenumTract, RectumTract, BiDuct, Duct, DuctOverflowableJunction, DeversingDuct, InnerGallbladder, SalivaryDuct)*>
+<!ELEMENT Connectible (Artery | Vein | Capillaries | Atrium | Ventricle | Nose | AirConnectible | Alveoli | DigestiveTract | StomachTract | DuodenumTract | RectumTract | BiDuct | Duct | DuctOverflowableJunction | DeversingDuct | InnerGallbladder | SalivaryDuct)*>
 <!ELEMENT Artery EMPTY>
 <!ATTLIST Artery
 	name CDATA #REQUIRED
