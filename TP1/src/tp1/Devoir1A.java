@@ -4,6 +4,13 @@
 
 package tp1;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.*;
+
+import org.xml.sax.helpers.*;
+
 /**
  * Fichier de base pour le Devoir1A du cours IFT287
  *
@@ -40,7 +47,21 @@ public class Devoir1A
 
         // Votre code de conversion devrait aller ici
         
+        
+        try {
+        	SAXParserFactory factory = SAXParserFactory.newInstance();
+        	factory.setValidating(true);
+        	SAXParser parser = factory.newSAXParser();
+        	DefaultHandler handler = new ParcerXml();
+        	parser.parse(new File(nomFichierXML), handler);
+        } catch (Exception e) {
+        	System.out.println(e.getMessage());
+        }
+
+        
+        
         System.out.println("Conversion terminee.");
     }
 
 }
+
