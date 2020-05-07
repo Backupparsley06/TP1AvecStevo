@@ -1,11 +1,15 @@
 package tp1.Objects;
 
-public class Systems implements AbstractMember{
+import org.xml.sax.Attributes;
 
-	@Override
-	public String GenerateJson() {
-		// TODO Auto-generated method stub
-		return null;
+public class Systems extends AbstractMember{
+
+	Systems(InterfaceMember parent, Attributes attributes) {
+		super(parent, attributes);
 	}
 
+	@Override
+	public String GetName() {
+		return this.getClass().getName();
+	}
 }

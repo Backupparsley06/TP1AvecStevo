@@ -1,11 +1,17 @@
 package tp1.Objects;
 
-public class MainBody implements AbstractMember {
+import org.xml.sax.Attributes;
 
-	@Override
-	public String GenerateJson() {
-		// TODO Auto-generated method stub
-		return null;
+public class MainBody extends AbstractMember {
+	
+	public MainBody(InterfaceMember parent, Attributes attributes)
+	{
+		super(parent, attributes);
 	}
-
+	
+	@Override
+	public String GetName() {
+		return this.getClass().getName();
+	}
+	
 }
