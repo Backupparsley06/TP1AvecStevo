@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 public class to extends AbstractMember{
 	String id;
 	to(InterfaceMember parent, String id) {
@@ -7,10 +9,8 @@ public class to extends AbstractMember{
 		this.id = id;
 	}
 	
-	@Override
-	public String GenerateJson(int stackLevel) {
-		return String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + id;
-		
+	public void GenerateJson(JsonGenerator gen) {
+		gen.write(Integer.parseInt(id));
 	}
 	
 	@Override

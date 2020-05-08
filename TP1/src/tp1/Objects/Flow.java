@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 public class Flow extends AbstractMember{
 	String id;
 	String name;
@@ -10,15 +12,13 @@ public class Flow extends AbstractMember{
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "{\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"id\" : " + id + ",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"name\" : \"" + name + "\",\n";
-		
-		for(int i = 0; i < childs.size(); i++)
-			json += childs.get(i).GenerateJson(stackLevel + 1) + (i < childs.size() - 1 ? "," : "") + "\n";
-		
-		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject()
+			.write("id", Integer.parseInt(id))
+			.write("name", name);
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd();
 	}
 	
 	@Override

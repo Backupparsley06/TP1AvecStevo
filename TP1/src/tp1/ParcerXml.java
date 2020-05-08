@@ -45,7 +45,7 @@ public class ParcerXml extends DefaultHandler {
 
 	}
 	
-	public String GetJson() {
-		return header.GenerateJson();
+	public void CreateJsonFile(String fileName) throws Exception {
+		header.GenerateJsonFile(fileName);
 	}
 }

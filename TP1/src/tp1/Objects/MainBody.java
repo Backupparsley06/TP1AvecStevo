@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 import org.xml.sax.Attributes;
 
 public class MainBody extends AbstractMember {
@@ -13,14 +15,13 @@ public class MainBody extends AbstractMember {
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "\"" + GetName() + "\" : {\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"bodyName\" : \"" + bodyName + "\",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"bodyID\" : " + bodyID + ",\n";
-		
-		for(int i = 0; i < childs.size(); i++)
-			json += childs.get(i).GenerateJson(stackLevel + 1) + (i < childs.size() - 1 ? "," : "") + "\n";
-		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject(GetName())
+			.write("bodyName", bodyName)
+			.write("bodyID", Integer.parseInt(bodyID));
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd();
 	}
 	
 	@Override

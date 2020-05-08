@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 public class Organ extends AbstractMember{
 	String name;
 	String id;
@@ -12,12 +14,12 @@ public class Organ extends AbstractMember{
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		return String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "{\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"name\" : \"" + name + "\",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"id\" : " + id + ",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"systemID\" : " + systemID + "\n" +
-				String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject()
+			.write("name", name)
+			.write("id", Integer.parseInt(id))
+			.write("systemID", Integer.parseInt(systemID))
+			.writeEnd();
 	}
 	
 	@Override

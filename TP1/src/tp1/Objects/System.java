@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 public class System extends AbstractMember {
 	String name;
 	String id;
@@ -9,9 +11,21 @@ public class System extends AbstractMember {
 		this.name = name;
 		this.id = id;
 		this.type = type;
-		// TODO Auto-generated constructor stub
 	}
 	
+	@Override
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject()
+			.write("name", name)
+			.write("id", Integer.parseInt(id))
+			.write("type", Integer.parseInt(type))
+			.writeStartArray("Flows");
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd().writeEnd();
+	}
+	
+	/*
 	@Override
 	public String GenerateJson(int stackLevel) {
 		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "{\n" +
@@ -25,6 +39,7 @@ public class System extends AbstractMember {
 		json += String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "]\n";
 		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
 	}
+	*/
 	
 	@Override
 	public String GetName() {

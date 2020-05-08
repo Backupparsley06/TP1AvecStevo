@@ -1,5 +1,7 @@
 package tp1.Objects;
 
+import javax.json.stream.JsonGenerator;
+
 public class FlowObject extends AbstractMember{
 	String type;
 	String name;
@@ -20,6 +22,29 @@ public class FlowObject extends AbstractMember{
 	}
 	
 	@Override
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject()
+			.write("type", type)
+			.write("name", name)
+			.write("id", Integer.parseInt(id));
+		if (volume != null) {
+			gen.write("volume", Double.parseDouble(volume));
+		}
+		if (length != null) {
+			gen.write("length", Double.parseDouble(length));
+		}
+		if (startRadius != null) {
+			gen.write("startRadius", Double.parseDouble(startRadius));
+		}
+		if (endRadius != null) {
+			gen.write("endRadius", Double.parseDouble(endRadius));
+		}
+		
+		gen.writeEnd();
+	}
+	
+	/*
+	@Override
 	public String GenerateJson(int stackLevel) {
 		return String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "{\n" +
 				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"type\" : \"" + type + "\",\n" +
@@ -31,6 +56,7 @@ public class FlowObject extends AbstractMember{
 				(endRadius != null ? ",\n" + String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"endRadius\" : " + endRadius : "") +
 				"\n" + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
 	}
+	*/
 	
 	@Override
 	public String GetName() {

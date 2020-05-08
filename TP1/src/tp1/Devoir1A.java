@@ -6,11 +6,8 @@ package tp1;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 
 import javax.xml.parsers.*;
-
-import org.xml.sax.helpers.*;
 
 /**
  * Fichier de base pour le Devoir1A du cours IFT287
@@ -56,9 +53,7 @@ public class Devoir1A
         	ParcerXml handler = new ParcerXml();
         	parser.parse(new File(nomFichierXML), handler);
         	
-        	FileWriter myWriter = new FileWriter(nomFichierJSON);
-            myWriter.write(handler.GetJson());
-            myWriter.close();
+        	handler.CreateJsonFile(nomFichierJSON);
         } catch (Exception e) {
         	System.out.println(e.getMessage());
         }

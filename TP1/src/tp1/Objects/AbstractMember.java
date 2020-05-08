@@ -2,7 +2,7 @@ package tp1.Objects;
 
 import java.util.ArrayList;
 
-import org.xml.sax.Attributes;
+import javax.json.stream.JsonGenerator;
 
 public abstract class AbstractMember implements InterfaceMember{
 
@@ -28,12 +28,8 @@ public abstract class AbstractMember implements InterfaceMember{
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		// TODO Auto-generated method stub
-		String s = "";
-		for (InterfaceMember child: childs)
-			s += child.GenerateJson(stackLevel + 1);
-		return s;
+	public void GenerateJson(JsonGenerator gen) {
+
 	}
 	
 }
