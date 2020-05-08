@@ -1,0 +1,3740 @@
+{
+	"MainBody" : {
+		"bodyName" : "DrHouse",
+		"bodyID" : 1,
+		"Systems" : [
+			{
+				"name" : "Circulatory",
+				"id" : 0,
+				"type" : 0,
+				"Flows" : [
+					{
+						"id" : 0,
+						"name" : "Heart",
+						"Connectible" : [
+							{
+								"type" : "Atrium",
+								"name" : "Left atrium",
+								"id" : 0,
+								"volume" : 120.0
+							},
+							{
+								"type" : "Atrium",
+								"name" : "Right atrium",
+								"id" : 1,
+								"volume" : 120.0
+							},
+							{
+								"type" : "Ventricle",
+								"name" : "Left ventricle",
+								"id" : 2,
+								"volume" : 120.0
+							},
+							{
+								"type" : "Ventricle",
+								"name" : "Right ventricle",
+								"id" : 3,
+								"volume" : 120.0
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									2
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									3
+								]
+							}
+						]
+					},
+					{
+						"id" : 1,
+						"name" : "Aorta connection",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Ascending aorta",
+								"id" : 0,
+								"length" : 3,
+								"startRadius" : 1.3,
+								"endRadius" : 1.4
+							},
+							{
+								"type" : "Artery",
+								"name" : "Arch of the aorta",
+								"id" : 1,
+								"length" : 3,
+								"startRadius" : 1.4,
+								"endRadius" : 1.6
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1
+								]
+							}
+						]
+					},
+					{
+						"id" : 2,
+						"name" : "Coronary",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Left coronary",
+								"id" : 0,
+								"length" : 4,
+								"startRadius" : 0.271109,
+								"endRadius" : 0.271109
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right coronary",
+								"id" : 1,
+								"length" : 4,
+								"startRadius" : 0.156525,
+								"endRadius" : 0.156525
+							},
+							{
+								"type" : "Artery",
+								"name" : "Posterior inter ventricular",
+								"id" : 2,
+								"length" : 3,
+								"startRadius" : 0.156525,
+								"endRadius" : 0.156525
+							},
+							{
+								"type" : "Artery",
+								"name" : "Anterior inter ventricular",
+								"id" : 3,
+								"length" : 3,
+								"startRadius" : 0.191703,
+								"endRadius" : 0.191703
+							},
+							{
+								"type" : "Artery",
+								"name" : "Circumflex",
+								"id" : 4,
+								"length" : 3,
+								"startRadius" : 0.191703,
+								"endRadius" : 0.191703
+							},
+							{
+								"type" : "Vein",
+								"name" : "Middle cardiac",
+								"id" : 5,
+								"length" : 6,
+								"startRadius" : 0.271109,
+								"endRadius" : 0.271109
+							},
+							{
+								"type" : "Vein",
+								"name" : "Great cardiac",
+								"id" : 6,
+								"length" : 6,
+								"startRadius" : 0.271109,
+								"endRadius" : 0.271109
+							},
+							{
+								"type" : "Vein",
+								"name" : "Anterior cardiac",
+								"id" : 7,
+								"length" : 3,
+								"startRadius" : 0.156525,
+								"endRadius" : 0.156525
+							},
+							{
+								"type" : "Vein",
+								"name" : "Small cardiac",
+								"id" : 8,
+								"length" : 3,
+								"startRadius" : 0.156525,
+								"endRadius" : 0.156525
+							},
+							{
+								"type" : "Vein",
+								"name" : "Great anterior",
+								"id" : 9,
+								"length" : 3,
+								"startRadius" : 0.221360,
+								"endRadius" : 0.221360
+							},
+							{
+								"type" : "Vein",
+								"name" : "Coronary sinus",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.313049,
+								"endRadius" : 0.313049
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left heart",
+								"id" : 11,
+								"volume" : 100.0
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right heart",
+								"id" : 12,
+								"volume" : 100.0
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 12,
+								"to" : [
+									10
+								]
+							}
+						]
+					},
+					{
+						"id" : 3,
+						"name" : "Pulmonary",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Pulmonary trunk",
+								"id" : 0,
+								"length" : 6,
+								"startRadius" : 1.5,
+								"endRadius" : 1.5
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right pulmonary",
+								"id" : 1,
+								"length" : 6,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left pulmonary",
+								"id" : 2,
+								"length" : 6,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right pulmonary 1",
+								"id" : 3,
+								"length" : 7,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right pulmonary 2",
+								"id" : 4,
+								"length" : 7,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left pulmonary 1",
+								"id" : 5,
+								"length" : 7,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left pulmonary 2",
+								"id" : 6,
+								"length" : 7,
+								"startRadius" : 1.06060
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left alveoli",
+								"id" : 7,
+								"volume" : 120.0
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right alveoli",
+								"id" : 8,
+								"volume" : 120.0
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									2
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									8
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									7
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									5,
+									6
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									3,
+									4
+								]
+							}
+						]
+					},
+					{
+						"id" : 4,
+						"name" : "Head and thoracic",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Left subclavian",
+								"id" : 0,
+								"length" : 1,
+								"startRadius" : 0.15
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left common carotid",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.075
+							},
+							{
+								"type" : "Artery",
+								"name" : "Brachiocephalic",
+								"id" : 2,
+								"length" : 2.25,
+								"startRadius" : 0.225
+							},
+							{
+								"type" : "Artery",
+								"name" : "Thoracic aorta",
+								"id" : 3,
+								"length" : 13,
+								"startRadius" : 1.25
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right subclavian",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.15
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right common carotid",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.075
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right internal thoracic",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right posterior intercostal",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right vertebral",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left internal thoracic",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left posterior intercostal",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left vertebral",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Basilar",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.04
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right internal carotid",
+								"id" : 13,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left internal carotid",
+								"id" : 14,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right superior thyroid",
+								"id" : 15,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left superior thyroid",
+								"id" : 16,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right facial",
+								"id" : 17,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left facial",
+								"id" : 18,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right lingual",
+								"id" : 19,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left lingual",
+								"id" : 20,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right external carotid",
+								"id" : 21,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left external carotid",
+								"id" : 22,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right superficial temporal",
+								"id" : 23,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left superficial temporal",
+								"id" : 24,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right maxillary",
+								"id" : 25,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left maxillary",
+								"id" : 26,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right occipital",
+								"id" : 27,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left occipital",
+								"id" : 28,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Artery",
+								"name" : "Bronchial",
+								"id" : 29,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Esophageal",
+								"id" : 30,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right superior phrenic",
+								"id" : 31,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left superior phrenic",
+								"id" : 32,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right superior thyroid",
+								"id" : 33,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left superior thyroid",
+								"id" : 34,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right internal jugular",
+								"id" : 35,
+								"length" : 1,
+								"startRadius" : 0.055
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left internal jugular",
+								"id" : 36,
+								"length" : 1,
+								"startRadius" : 0.055
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right facial",
+								"id" : 37,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left facial",
+								"id" : 38,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right lingual",
+								"id" : 39,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left lingual",
+								"id" : 40,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right occipital",
+								"id" : 41,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left occipital",
+								"id" : 42,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right superficial temporal",
+								"id" : 43,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left superficial temporal",
+								"id" : 44,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right maxillary",
+								"id" : 45,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left maxillary",
+								"id" : 46,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right external jugular",
+								"id" : 47,
+								"length" : 1,
+								"startRadius" : 0.04
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left external jugular",
+								"id" : 48,
+								"length" : 1,
+								"startRadius" : 0.04
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right internal thoracic",
+								"id" : 49,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left internal thoracic",
+								"id" : 50,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right vertebral",
+								"id" : 51,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left vertebral",
+								"id" : 52,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Azygos",
+								"id" : 53,
+								"length" : 1,
+								"startRadius" : 0.055
+							},
+							{
+								"type" : "Vein",
+								"name" : "Hemiazygos",
+								"id" : 54,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Bronchial",
+								"id" : 55,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Esophageal",
+								"id" : 56,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Pericardial",
+								"id" : 57,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right brachiocephalic",
+								"id" : 58,
+								"length" : 1,
+								"startRadius" : 0.205
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left brachiocephalic",
+								"id" : 59,
+								"length" : 1,
+								"startRadius" : 0.205
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Brain",
+								"id" : 60,
+								"volume" : 0.1,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Thyroid",
+								"id" : 61,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Facial",
+								"id" : 62,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Lingual",
+								"id" : 63,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Head",
+								"id" : 64,
+								"volume" : 0.05,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Maxilary",
+								"id" : 65,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Vertebral",
+								"id" : 66,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right costal",
+								"id" : 67,
+								"volume" : 0.03,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left costal",
+								"id" : 68,
+								"volume" : 0.03,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Lung",
+								"id" : 69,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Esophageal",
+								"id" : 70,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Diaphragm",
+								"id" : 71,
+								"volume" : 0.015,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									9,
+									11
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									14,
+									16,
+									18,
+									20,
+									22
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									4,
+									5
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									7,
+									10,
+									29,
+									30,
+									31,
+									32
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									6,
+									8
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									13,
+									15,
+									17,
+									19,
+									21
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									67
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									67
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									12,
+									66
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									68
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									68
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									12,
+									66
+								]
+							},
+							{
+								"id" : 12,
+								"to" : [
+									60
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									60
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									60
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									61
+								]
+							},
+							{
+								"id" : 16,
+								"to" : [
+									61
+								]
+							},
+							{
+								"id" : 17,
+								"to" : [
+									62
+								]
+							},
+							{
+								"id" : 18,
+								"to" : [
+									62
+								]
+							},
+							{
+								"id" : 19,
+								"to" : [
+									63
+								]
+							},
+							{
+								"id" : 20,
+								"to" : [
+									63
+								]
+							},
+							{
+								"id" : 21,
+								"to" : [
+									23,
+									27
+								]
+							},
+							{
+								"id" : 22,
+								"to" : [
+									24,
+									28
+								]
+							},
+							{
+								"id" : 23,
+								"to" : [
+									25,
+									64
+								]
+							},
+							{
+								"id" : 24,
+								"to" : [
+									26,
+									64
+								]
+							},
+							{
+								"id" : 25,
+								"to" : [
+									65
+								]
+							},
+							{
+								"id" : 26,
+								"to" : [
+									65
+								]
+							},
+							{
+								"id" : 27,
+								"to" : [
+									64
+								]
+							},
+							{
+								"id" : 28,
+								"to" : [
+									64
+								]
+							},
+							{
+								"id" : 29,
+								"to" : [
+									69
+								]
+							},
+							{
+								"id" : 30,
+								"to" : [
+									70
+								]
+							},
+							{
+								"id" : 31,
+								"to" : [
+									71
+								]
+							},
+							{
+								"id" : 32,
+								"to" : [
+									71
+								]
+							},
+							{
+								"id" : 33,
+								"to" : [
+									35
+								]
+							},
+							{
+								"id" : 34,
+								"to" : [
+									36
+								]
+							},
+							{
+								"id" : 35,
+								"to" : [
+									58
+								]
+							},
+							{
+								"id" : 36,
+								"to" : [
+									59
+								]
+							},
+							{
+								"id" : 37,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 38,
+								"to" : [
+									48
+								]
+							},
+							{
+								"id" : 39,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 40,
+								"to" : [
+									48
+								]
+							},
+							{
+								"id" : 41,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 42,
+								"to" : [
+									48
+								]
+							},
+							{
+								"id" : 43,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 44,
+								"to" : [
+									48
+								]
+							},
+							{
+								"id" : 45,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 46,
+								"to" : [
+									48
+								]
+							},
+							{
+								"id" : 47,
+								"to" : [
+									58
+								]
+							},
+							{
+								"id" : 48,
+								"to" : [
+									59
+								]
+							},
+							{
+								"id" : 51,
+								"to" : [
+									58
+								]
+							},
+							{
+								"id" : 52,
+								"to" : [
+									59
+								]
+							},
+							{
+								"id" : 54,
+								"to" : [
+									53
+								]
+							},
+							{
+								"id" : 55,
+								"to" : [
+									53
+								]
+							},
+							{
+								"id" : 56,
+								"to" : [
+									53
+								]
+							},
+							{
+								"id" : 57,
+								"to" : [
+									53
+								]
+							},
+							{
+								"id" : 60,
+								"to" : [
+									35,
+									36
+								]
+							},
+							{
+								"id" : 61,
+								"to" : [
+									33,
+									34
+								]
+							},
+							{
+								"id" : 62,
+								"to" : [
+									37,
+									38
+								]
+							},
+							{
+								"id" : 63,
+								"to" : [
+									39,
+									40
+								]
+							},
+							{
+								"id" : 64,
+								"to" : [
+									41,
+									42,
+									43,
+									44
+								]
+							},
+							{
+								"id" : 65,
+								"to" : [
+									45,
+									46
+								]
+							},
+							{
+								"id" : 66,
+								"to" : [
+									51,
+									52
+								]
+							},
+							{
+								"id" : 67,
+								"to" : [
+									49,
+									53
+								]
+							},
+							{
+								"id" : 68,
+								"to" : [
+									50,
+									54
+								]
+							},
+							{
+								"id" : 69,
+								"to" : [
+									55
+								]
+							},
+							{
+								"id" : 70,
+								"to" : [
+									56
+								]
+							},
+							{
+								"id" : 71,
+								"to" : [
+									57
+								]
+							}
+						]
+					},
+					{
+						"id" : 5,
+						"name" : "Left arm",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Axillary",
+								"id" : 0,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Artery",
+								"name" : "Brachial",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Radial",
+								"id" : 2,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Ulnar",
+								"id" : 3,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Deep palmar arch",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Superficial palmar arch",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Basilic",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.035
+							},
+							{
+								"type" : "Vein",
+								"name" : "Cephalic",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Ulnar",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Radial",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Brachial",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.045
+							},
+							{
+								"type" : "Vein",
+								"name" : "Axillary",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Vein",
+								"name" : "Subclavian",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Upper arm",
+								"id" : 13,
+								"volume" : 0.04,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Lower arm",
+								"id" : 14,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Digital",
+								"id" : 15,
+								"volume" : 0.04,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									13
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									2,
+									3,
+									13
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									4,
+									5,
+									14
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									4,
+									5,
+									14
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									6,
+									11
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									8,
+									9
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									6,
+									7,
+									8,
+									9
+								]
+							}
+						]
+					},
+					{
+						"id" : 6,
+						"name" : "Right arm",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Axillary",
+								"id" : 0,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Artery",
+								"name" : "Brachial",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Radial",
+								"id" : 2,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Ulnar",
+								"id" : 3,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Deep palmar arch",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Superficial palmar arch",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Basilic",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.035
+							},
+							{
+								"type" : "Vein",
+								"name" : "Cephalic",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Ulnar",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Radial",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Brachial",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.045
+							},
+							{
+								"type" : "Vein",
+								"name" : "Axillary",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Vein",
+								"name" : "Subclavian",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Upper arm",
+								"id" : 13,
+								"volume" : 0.04,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Lower arm",
+								"id" : 14,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Digital",
+								"id" : 15,
+								"volume" : 0.04,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									13
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									2,
+									3,
+									13
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									4,
+									5,
+									14
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									4,
+									5,
+									14
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									10
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									6,
+									11
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									8,
+									9
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									6,
+									7,
+									8,
+									9
+								]
+							}
+						]
+					},
+					{
+						"id" : 7,
+						"name" : "Abdominal",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Abdominal aorta",
+								"id" : 0,
+								"length" : 25,
+								"startRadius" : 1.20,
+								"endRadius" : 0.875
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right inferior phrenic",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.0025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left inferior phrenic",
+								"id" : 2,
+								"length" : 1,
+								"startRadius" : 0.0025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right suprarenal",
+								"id" : 3,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left suprarenal",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Lumbar",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right renal",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left renal",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Superior mesenteric",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.055
+							},
+							{
+								"type" : "Artery",
+								"name" : "Inferior mesenteric",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right gonad",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left gonad",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Celiac trunk",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Hepatic",
+								"id" : 13,
+								"length" : 1,
+								"startRadius" : 0.045
+							},
+							{
+								"type" : "Artery",
+								"name" : "Splenic",
+								"id" : 14,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left gastric",
+								"id" : 15,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Gastroduodenal",
+								"id" : 16,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right gastric",
+								"id" : 17,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Right gastroepiploic",
+								"id" : 18,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Left gastroepiploic",
+								"id" : 19,
+								"length" : 1,
+								"startRadius" : 0.0025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right suprarenal",
+								"id" : 20,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left suprarenal",
+								"id" : 21,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Lumbar",
+								"id" : 22,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right renal",
+								"id" : 23,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left renal",
+								"id" : 24,
+								"length" : 1,
+								"startRadius" : 0.035
+							},
+							{
+								"type" : "Vein",
+								"name" : "Right gonad",
+								"id" : 25,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Left gonad",
+								"id" : 26,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Inferior mesenteric",
+								"id" : 27,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Vein",
+								"name" : "Superior mesenteric",
+								"id" : 28,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Vein",
+								"name" : "Gastric",
+								"id" : 29,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Gastroepiploic",
+								"id" : 30,
+								"length" : 1,
+								"startRadius" : 0.0025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Hepatic portal",
+								"id" : 31,
+								"length" : 1,
+								"startRadius" : 0.135
+							},
+							{
+								"type" : "Vein",
+								"name" : "Hepatic",
+								"id" : 32,
+								"length" : 1,
+								"startRadius" : 0.165
+							},
+							{
+								"type" : "Vein",
+								"name" : "Splenic",
+								"id" : 33,
+								"length" : 1,
+								"startRadius" : 0.05
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right adrenal gland",
+								"id" : 34,
+								"volume" : 0.005,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left adrenal gland",
+								"id" : 35,
+								"volume" : 0.005,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right reproductive gonad",
+								"id" : 36,
+								"volume" : 0.005,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left reproductive gonad",
+								"id" : 37,
+								"volume" : 0.005,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Right renal",
+								"id" : 38,
+								"volume" : 0.025,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Left renal",
+								"id" : 39,
+								"volume" : 0.025,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Lumbar vertebra",
+								"id" : 40,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Intestinal",
+								"id" : 41,
+								"volume" : 0.025,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Transverse colon",
+								"id" : 42,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Ascending colon",
+								"id" : 43,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Gallbladder",
+								"id" : 44,
+								"volume" : 0.005,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Descending colon",
+								"id" : 45,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Sigmoid colon",
+								"id" : 46,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Stomach",
+								"id" : 47,
+								"volume" : 0.025,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Pancreas",
+								"id" : 48,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Spleen",
+								"id" : 49,
+								"volume" : 0.015,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Liver inner system",
+								"id" : 50,
+								"volume" : 0.165,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Liver",
+								"id" : 51,
+								"volume" : 0.03,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Duodenum",
+								"id" : 52,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Common gastroduodenal",
+								"id" : 53,
+								"volume" : 0.035,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									2,
+									3,
+									4,
+									5,
+									6,
+									7,
+									8,
+									9,
+									10,
+									11,
+									12
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									34
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									35
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									40
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									38
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									39
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									41,
+									42,
+									43
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									45,
+									46
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									36
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									37
+								]
+							},
+							{
+								"id" : 12,
+								"to" : [
+									13,
+									14,
+									15
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									16,
+									17,
+									51
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									19,
+									47,
+									48,
+									49
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 16,
+								"to" : [
+									18,
+									48,
+									52
+								]
+							},
+							{
+								"id" : 17,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 18,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 19,
+								"to" : [
+									47
+								]
+							},
+							{
+								"id" : 21,
+								"to" : [
+									24
+								]
+							},
+							{
+								"id" : 26,
+								"to" : [
+									24
+								]
+							},
+							{
+								"id" : 27,
+								"to" : [
+									33
+								]
+							},
+							{
+								"id" : 28,
+								"to" : [
+									31
+								]
+							},
+							{
+								"id" : 29,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 30,
+								"to" : [
+									29
+								]
+							},
+							{
+								"id" : 31,
+								"to" : [
+									50
+								]
+							},
+							{
+								"id" : 33,
+								"to" : [
+									31
+								]
+							},
+							{
+								"id" : 34,
+								"to" : [
+									20
+								]
+							},
+							{
+								"id" : 35,
+								"to" : [
+									21
+								]
+							},
+							{
+								"id" : 36,
+								"to" : [
+									25
+								]
+							},
+							{
+								"id" : 37,
+								"to" : [
+									26
+								]
+							},
+							{
+								"id" : 38,
+								"to" : [
+									23
+								]
+							},
+							{
+								"id" : 39,
+								"to" : [
+									24
+								]
+							},
+							{
+								"id" : 40,
+								"to" : [
+									22
+								]
+							},
+							{
+								"id" : 41,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 42,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 43,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 44,
+								"to" : [
+									31
+								]
+							},
+							{
+								"id" : 45,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 46,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 47,
+								"to" : [
+									29,
+									30,
+									53
+								]
+							},
+							{
+								"id" : 48,
+								"to" : [
+									33,
+									53
+								]
+							},
+							{
+								"id" : 49,
+								"to" : [
+									33
+								]
+							},
+							{
+								"id" : 50,
+								"to" : [
+									32
+								]
+							},
+							{
+								"id" : 51,
+								"to" : [
+									50
+								]
+							},
+							{
+								"id" : 52,
+								"to" : [
+									44,
+									53
+								]
+							},
+							{
+								"id" : 53,
+								"to" : [
+									29,
+									51
+								]
+							}
+						]
+					},
+					{
+						"id" : 8,
+						"name" : "Right leg",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Common Iliac",
+								"id" : 0,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Artery",
+								"name" : "External Iliac",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Internal Iliac",
+								"id" : 2,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Femoral",
+								"id" : 3,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Popliteal",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.06
+							},
+							{
+								"type" : "Artery",
+								"name" : "Anterior Tibial",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Posterior Tibial",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Dorsalis Pedis",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Lateral Plantar",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Peroneal",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Medial Plantar",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Plantar Arch",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Common Iliac",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Vein",
+								"name" : "External Iliac",
+								"id" : 13,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Vein",
+								"name" : "Internal Iliac",
+								"id" : 14,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Femoral",
+								"id" : 15,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Vein",
+								"name" : "Popliteal",
+								"id" : 16,
+								"length" : 1,
+								"startRadius" : 0.045
+							},
+							{
+								"type" : "Vein",
+								"name" : "Anterior Tibial",
+								"id" : 17,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Great Saphenous",
+								"id" : 18,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Small Saphenous",
+								"id" : 19,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Posterior Tibial",
+								"id" : 20,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Peroneal",
+								"id" : 21,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Dorsal Venous Arch",
+								"id" : 22,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Thight",
+								"id" : 23,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Anterior Leg",
+								"id" : 24,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Posterior Tibial",
+								"id" : 25,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Peroneal",
+								"id" : 26,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Digital",
+								"id" : 27,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Pelvic",
+								"id" : 28,
+								"volume" : 0.02,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									2
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									3
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									23,
+									4
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									5,
+									6
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									24,
+									7
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									25,
+									9,
+									8,
+									10
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									26
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									13
+								]
+							},
+							{
+								"id" : 16,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 17,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 18,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 19,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 20,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 21,
+								"to" : [
+									20
+								]
+							},
+							{
+								"id" : 22,
+								"to" : [
+									17,
+									18
+								]
+							},
+							{
+								"id" : 23,
+								"to" : [
+									15,
+									18
+								]
+							},
+							{
+								"id" : 24,
+								"to" : [
+									17,
+									18
+								]
+							},
+							{
+								"id" : 25,
+								"to" : [
+									20
+								]
+							},
+							{
+								"id" : 26,
+								"to" : [
+									19,
+									21
+								]
+							},
+							{
+								"id" : 27,
+								"to" : [
+									19,
+									20,
+									22
+								]
+							},
+							{
+								"id" : 28,
+								"to" : [
+									14
+								]
+							}
+						]
+					},
+					{
+						"id" : 9,
+						"name" : "Left leg",
+						"Connectible" : [
+							{
+								"type" : "Artery",
+								"name" : "Common Iliac",
+								"id" : 0,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Artery",
+								"name" : "External Iliac",
+								"id" : 1,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Internal Iliac",
+								"id" : 2,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Artery",
+								"name" : "Femoral",
+								"id" : 3,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Artery",
+								"name" : "Popliteal",
+								"id" : 4,
+								"length" : 1,
+								"startRadius" : 0.06
+							},
+							{
+								"type" : "Artery",
+								"name" : "Anterior Tibial",
+								"id" : 5,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Posterior Tibial",
+								"id" : 6,
+								"length" : 1,
+								"startRadius" : 0.03
+							},
+							{
+								"type" : "Artery",
+								"name" : "Dorsalis Pedis",
+								"id" : 7,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Lateral Plantar",
+								"id" : 8,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Peroneal",
+								"id" : 9,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Artery",
+								"name" : "Medial Plantar",
+								"id" : 10,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Artery",
+								"name" : "Plantar Arch",
+								"id" : 11,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Common Iliac",
+								"id" : 12,
+								"length" : 1,
+								"startRadius" : 0.1
+							},
+							{
+								"type" : "Vein",
+								"name" : "External Iliac",
+								"id" : 13,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Vein",
+								"name" : "Internal Iliac",
+								"id" : 14,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Femoral",
+								"id" : 15,
+								"length" : 1,
+								"startRadius" : 0.08
+							},
+							{
+								"type" : "Vein",
+								"name" : "Popliteal",
+								"id" : 16,
+								"length" : 1,
+								"startRadius" : 0.045
+							},
+							{
+								"type" : "Vein",
+								"name" : "Anterior Tibial",
+								"id" : 17,
+								"length" : 1,
+								"startRadius" : 0.015
+							},
+							{
+								"type" : "Vein",
+								"name" : "Great Saphenous",
+								"id" : 18,
+								"length" : 1,
+								"startRadius" : 0.025
+							},
+							{
+								"type" : "Vein",
+								"name" : "Small Saphenous",
+								"id" : 19,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Vein",
+								"name" : "Posterior Tibial",
+								"id" : 20,
+								"length" : 1,
+								"startRadius" : 0.02
+							},
+							{
+								"type" : "Vein",
+								"name" : "Peroneal",
+								"id" : 21,
+								"length" : 1,
+								"startRadius" : 0.005
+							},
+							{
+								"type" : "Vein",
+								"name" : "Dorsal Venous Arch",
+								"id" : 22,
+								"length" : 1,
+								"startRadius" : 0.01
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Thight",
+								"id" : 23,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Anterior Leg",
+								"id" : 24,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Posterior Tibial",
+								"id" : 25,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Peroneal",
+								"id" : 26,
+								"volume" : 0.01,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Digital",
+								"id" : 27,
+								"volume" : 0.02,
+								"length" : 1
+							},
+							{
+								"type" : "Capillaries",
+								"name" : "Pelvic",
+								"id" : 28,
+								"volume" : 0.02,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1,
+									2
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									3
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									28
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									23,
+									4
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									5,
+									6
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									24,
+									7
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									25,
+									9,
+									8,
+									10
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									26
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									27
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									13
+								]
+							},
+							{
+								"id" : 16,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 17,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 18,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 19,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 20,
+								"to" : [
+									16
+								]
+							},
+							{
+								"id" : 21,
+								"to" : [
+									20
+								]
+							},
+							{
+								"id" : 22,
+								"to" : [
+									17,
+									18
+								]
+							},
+							{
+								"id" : 23,
+								"to" : [
+									15,
+									18
+								]
+							},
+							{
+								"id" : 24,
+								"to" : [
+									17,
+									18
+								]
+							},
+							{
+								"id" : 25,
+								"to" : [
+									20
+								]
+							},
+							{
+								"id" : 26,
+								"to" : [
+									19,
+									21
+								]
+							},
+							{
+								"id" : 27,
+								"to" : [
+									19,
+									20,
+									22
+								]
+							},
+							{
+								"id" : 28,
+								"to" : [
+									14
+								]
+							}
+						]
+					},
+					{
+						"id" : 10,
+						"name" : "Vena cava drain",
+						"Connectible" : [
+							{
+								"type" : "Vein",
+								"name" : "Superior Vena Cava",
+								"id" : 0,
+								"length" : 3,
+								"startRadius" : 1.25
+							},
+							{
+								"type" : "Vein",
+								"name" : "Inferior Vena Cava",
+								"id" : 1,
+								"length" : 3,
+								"startRadius" : 1.25
+							}
+						],
+						"Connections" : [
+						]
+					}
+				]
+			},
+			{
+				"name" : "Respiratory",
+				"id" : 1,
+				"type" : 1,
+				"Flows" : [
+					{
+						"id" : 0,
+						"name" : "Air",
+						"Connectible" : [
+							{
+								"type" : "Nose",
+								"name" : "Nose",
+								"id" : 0
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Pharynx",
+								"id" : 1,
+								"length" : 5,
+								"startRadius" : 1,
+								"endRadius" : 1
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Larynx",
+								"id" : 2,
+								"length" : 5,
+								"startRadius" : 1,
+								"endRadius" : 1
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Trachea",
+								"id" : 3,
+								"length" : 5,
+								"startRadius" : 1,
+								"endRadius" : 1
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Left bronchi",
+								"id" : 4,
+								"length" : 5,
+								"startRadius" : 0.7071,
+								"endRadius" : 0.7071
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Right bronchi",
+								"id" : 5,
+								"length" : 5,
+								"startRadius" : 0.7071,
+								"endRadius" : 0.7071
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Superior left lobar bronchi",
+								"id" : 6,
+								"length" : 2.0,
+								"startRadius" : 0.5,
+								"endRadius" : 0.5
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Inferior left lobar bronchi",
+								"id" : 7,
+								"length" : 2.0,
+								"startRadius" : 0.5,
+								"endRadius" : 0.5
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Superior right lobar bronchi",
+								"id" : 8,
+								"length" : 2.0,
+								"startRadius" : 0.408,
+								"endRadius" : 0.408
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Medium right lobar bronchi",
+								"id" : 9,
+								"length" : 2.0,
+								"startRadius" : 0.408,
+								"endRadius" : 0.408
+							},
+							{
+								"type" : "AirConnectible",
+								"name" : "Inferior right lobar bronchi",
+								"id" : 10,
+								"length" : 2.0,
+								"startRadius" : 0.408,
+								"endRadius" : 0.408
+							},
+							{
+								"type" : "Alveoli",
+								"name" : "Right superior alveoli",
+								"id" : 11,
+								"volume" : 400
+							},
+							{
+								"type" : "Alveoli",
+								"name" : "Right average alveoli",
+								"id" : 12,
+								"volume" : 400
+							},
+							{
+								"type" : "Alveoli",
+								"name" : "Right inferior alveoli",
+								"id" : 13,
+								"volume" : 400
+							},
+							{
+								"type" : "Alveoli",
+								"name" : "Left superior alveoli",
+								"id" : 14,
+								"volume" : 600
+							},
+							{
+								"type" : "Alveoli",
+								"name" : "Left inferior alveoli",
+								"id" : 15,
+								"volume" : 600
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									2
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									3
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									4,
+									5
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									6,
+									7
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									8,
+									9,
+									10
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									14
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									11
+								]
+							},
+							{
+								"id" : 9,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									13
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name" : "Digestive",
+				"id" : 2,
+				"type" : 2,
+				"Flows" : [
+					{
+						"id" : 0,
+						"name" : "Food",
+						"Connectible" : [
+							{
+								"type" : "DigestiveTract",
+								"name" : "Pharynx",
+								"id" : 0,
+								"volume" : 12,
+								"length" : 4
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Esophagus",
+								"id" : 1,
+								"volume" : 314.16,
+								"length" : 25
+							},
+							{
+								"type" : "StomachTract",
+								"name" : "Stomach",
+								"id" : 2,
+								"volume" : 12,
+								"length" : 1
+							},
+							{
+								"type" : "DuodenumTract",
+								"name" : "Duodenum",
+								"id" : 3,
+								"volume" : 10,
+								"length" : 2
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Small intestine",
+								"id" : 4,
+								"volume" : 5026.55,
+								"length" : 40
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Ascending colon",
+								"id" : 5,
+								"volume" : 477.5,
+								"length" : 38
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Transverse colon",
+								"id" : 6,
+								"volume" : 452.4,
+								"length" : 36
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Descending colon",
+								"id" : 7,
+								"volume" : 477.5,
+								"length" : 38
+							},
+							{
+								"type" : "DigestiveTract",
+								"name" : "Sigmoid colon",
+								"id" : 8,
+								"volume" : 314.16,
+								"length" : 25
+							},
+							{
+								"type" : "RectumTract",
+								"name" : "Rectum",
+								"id" : 9,
+								"volume" : 113.0,
+								"length" : 10
+							},
+							{
+								"type" : "BiDuct",
+								"name" : "Cystic duct",
+								"id" : 10
+							},
+							{
+								"type" : "Duct",
+								"name" : "Hepatic duct",
+								"id" : 11
+							},
+							{
+								"type" : "DuctOverflowableJunction",
+								"name" : "Bile duct junction",
+								"id" : 12
+							},
+							{
+								"type" : "Duct",
+								"name" : "Common bile duct",
+								"id" : 13
+							},
+							{
+								"type" : "Duct",
+								"name" : "Pancreatic duct",
+								"id" : 14
+							},
+							{
+								"type" : "DeversingDuct",
+								"name" : "Ampulla of Vater",
+								"id" : 15
+							},
+							{
+								"type" : "InnerGallbladder",
+								"name" : "Gallbladder duct",
+								"id" : 16
+							}
+						],
+						"Connections" : [
+							{
+								"id" : 0,
+								"to" : [
+									1
+								]
+							},
+							{
+								"id" : 1,
+								"to" : [
+									2
+								]
+							},
+							{
+								"id" : 2,
+								"to" : [
+									3
+								]
+							},
+							{
+								"id" : 3,
+								"to" : [
+									4
+								]
+							},
+							{
+								"id" : 4,
+								"to" : [
+									5
+								]
+							},
+							{
+								"id" : 5,
+								"to" : [
+									6
+								]
+							},
+							{
+								"id" : 6,
+								"to" : [
+									7
+								]
+							},
+							{
+								"id" : 7,
+								"to" : [
+									8
+								]
+							},
+							{
+								"id" : 8,
+								"to" : [
+									9
+								]
+							},
+							{
+								"id" : 10,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 11,
+								"to" : [
+									12
+								]
+							},
+							{
+								"id" : 12,
+								"to" : [
+									13
+								]
+							},
+							{
+								"id" : 13,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 14,
+								"to" : [
+									15
+								]
+							},
+							{
+								"id" : 15,
+								"to" : [
+									3
+								]
+							},
+							{
+								"id" : 16,
+								"to" : [
+									10
+								]
+							}
+						]
+					},
+					{
+						"id" : 1,
+						"name" : "Salivary",
+						"Connectible" : [
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Left parotid duct",
+								"id" : 0,
+								"volume" : 1,
+								"length" : 3
+							},
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Left submandibular duct",
+								"id" : 1,
+								"volume" : 1,
+								"length" : 3
+							},
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Left sublingual duct",
+								"id" : 2,
+								"volume" : 1,
+								"length" : 1
+							},
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Right parotid duct",
+								"id" : 3,
+								"volume" : 1,
+								"length" : 3
+							},
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Right submandibular duct",
+								"id" : 4,
+								"volume" : 1,
+								"length" : 3
+							},
+							{
+								"type" : "SalivaryDuct",
+								"name" : "Right sublingual duct",
+								"id" : 5,
+								"volume" : 1,
+								"length" : 1
+							}
+						],
+						"Connections" : [
+						]
+					}
+				]
+			}
+		],
+		"Organs" : [
+			{
+				"name" : "Heart",
+				"id" : 0,
+				"systemID" : 0
+			},
+			{
+				"name" : "Left lung",
+				"id" : 0,
+				"systemID" : 1
+			},
+			{
+				"name" : "Right lung",
+				"id" : 1,
+				"systemID" : 1
+			},
+			{
+				"name" : "Mouth",
+				"id" : 0,
+				"systemID" : 2
+			},
+			{
+				"name" : "Esophagus",
+				"id" : 1,
+				"systemID" : 2
+			},
+			{
+				"name" : "Stomach",
+				"id" : 2,
+				"systemID" : 2
+			},
+			{
+				"name" : "Small intestine",
+				"id" : 3,
+				"systemID" : 2
+			},
+			{
+				"name" : "Liver",
+				"id" : 4,
+				"systemID" : 2
+			},
+			{
+				"name" : "Pancreas",
+				"id" : 5,
+				"systemID" : 2
+			},
+			{
+				"name" : "Gallbladder",
+				"id" : 6,
+				"systemID" : 2
+			},
+			{
+				"name" : "Large intestine",
+				"id" : 7,
+				"systemID" : 2
+			},
+			{
+				"name" : "Rectum",
+				"id" : 8,
+				"systemID" : 2
+			}
+		]
+	}
+}

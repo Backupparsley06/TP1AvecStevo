@@ -1,0 +1,44 @@
+{
+	"Mainbody" : {
+		"bodyName" : "",
+		"bodyId" : "",
+		"Systems" : [
+			{
+				"name" : "",
+				"id" : "",
+				"type" : "",
+				"Flows" : [
+					{
+						"id" : "",
+						"name" : "",
+						"Connectible" : [
+							{
+								"type" : "",
+								"name" : "",
+								"id" : "",
+								"volume" : "",
+								"length" : "",
+								"startRadius" : "",
+								"endRadius" : ""
+							}
+						],
+						"Connections" : [
+							{
+								"id" : "",
+								"to" : [ "" ]
+							}
+						]
+					}
+				]
+
+			}
+		],
+		"Organs" : [
+			{
+				"name" : "",
+				"id" : "",
+				"systemId" : ""
+			}
+		]
+	}
+}
