@@ -5,6 +5,7 @@
 package tp1;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.xml.parsers.*;
@@ -52,8 +53,12 @@ public class Devoir1A
         	SAXParserFactory factory = SAXParserFactory.newInstance();
         	factory.setValidating(true);
         	SAXParser parser = factory.newSAXParser();
-        	DefaultHandler handler = new ParcerXml();
+        	ParcerXml handler = new ParcerXml();
         	parser.parse(new File(nomFichierXML), handler);
+        	
+        	FileWriter myWriter = new FileWriter(nomFichierJSON);
+            myWriter.write(handler.GetJson());
+            myWriter.close();
         } catch (Exception e) {
         	System.out.println(e.getMessage());
         }

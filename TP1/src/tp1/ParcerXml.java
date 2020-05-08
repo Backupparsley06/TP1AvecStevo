@@ -17,7 +17,7 @@ public class ParcerXml extends DefaultHandler {
 			 String lName,
 			 String qName,
 			 Attributes attrs){
-		InterfaceMember child = MemberFactory.CreatMember(qName, member, attrs);
+		InterfaceMember child = MemberFactory.CreatMemberFromXml(qName, member, attrs);
 		member.AddChild(child);
 		member = child;
 	}
@@ -42,6 +42,10 @@ public class ParcerXml extends DefaultHandler {
 
 	
 	public void endDocument() {
-		
+
+	}
+	
+	public String GetJson() {
+		return header.GenerateJson();
 	}
 }

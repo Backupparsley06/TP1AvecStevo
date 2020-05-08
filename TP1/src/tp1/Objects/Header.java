@@ -3,12 +3,14 @@ package tp1.Objects;
 public class Header extends AbstractMember{
 
 	Header() {
-		super(null, null);
+		super(null);
 	}
 	
 	public String GenerateJson() {
-		
-		return GenerateJson(-1);
+		String json = "{\n";
+		for(InterfaceMember child : childs)
+			json += child.GenerateJson(1) + "\n";
+		return json + "}";
 	}
 
 	@Override

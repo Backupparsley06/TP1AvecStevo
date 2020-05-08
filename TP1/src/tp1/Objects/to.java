@@ -1,15 +1,20 @@
 package tp1.Objects;
 
-import org.xml.sax.Attributes;
-
 public class to extends AbstractMember{
-	to(InterfaceMember parent, Attributes attributes) {
-		super(parent, attributes);
-		// TODO Auto-generated constructor stub
+	String id;
+	to(InterfaceMember parent, String id) {
+		super(parent);
+		this.id = id;
 	}
+	
+	@Override
+	public String GenerateJson(int stackLevel) {
+		return String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + id;
+		
+	}
+	
 	@Override
 	public String GetName() {
-		// TODO Auto-generated method stub
 		return this.getClass().getName();
 	}
 }

@@ -8,8 +8,7 @@ public abstract class AbstractMember implements InterfaceMember{
 
 	InterfaceMember parent;
 	ArrayList<InterfaceMember> childs;
-	Attributes attributes;
-	AbstractMember(InterfaceMember parent, Attributes attributes){
+	AbstractMember(InterfaceMember parent){
 		childs = new ArrayList<InterfaceMember>();
 		this.parent = parent;
 	}
