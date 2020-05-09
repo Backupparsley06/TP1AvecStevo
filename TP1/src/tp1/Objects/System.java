@@ -1,5 +1,14 @@
 package tp1.Objects;
 
+import static javax.json.stream.JsonParser.Event.*;
+
+import javax.json.stream.JsonGenerator;
+import javax.json.stream.JsonParser;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
 public class System extends AbstractMember {
 	String name;
 	String id;
@@ -9,26 +18,68 @@ public class System extends AbstractMember {
 		this.name = name;
 		this.id = id;
 		this.type = type;
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "{\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"name\" : \"" + name + "\",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"id\" : " + id + ",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"type\" : " + type + ",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"Flows\" : [\n";
-		
-		for(int i = 0; i < childs.size(); i++)
-			json += childs.get(i).GenerateJson(stackLevel + 2) + (i < childs.size() - 1 ? "," : "") + "\n";
-		json += String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "]\n";
-		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject()
+			.write("name", name)
+			.write("id", Integer.parseInt(id))
+			.write("type", Integer.parseInt(type))
+			.writeStartArray("Flows");
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd().writeEnd();
 	}
+	
+	public System(InterfaceMember parent, JsonParser parser) {
+		super(parent);
+		JsonParser.Event event = null;
+		for (;event != END_OBJECT;) {
+			event = parser.next();
+			if (event == KEY_NAME) {
+				String s = parser.getString();
+				parser.next();
+				if(s.equals("name")) {
+					name = parser.getString();
+				}
+				else if (s.equals("id")) {
+					id = parser.getString();
+				}
+				else if (s.equals("type")) {
+					type = parser.getString();
+				}
+				else if (s.equals("Flows")) {
+					for (;event != END_ARRAY;) {
+						event = parser.next();
+						if (event == START_OBJECT) {
+							AddChild(new Flow(this, parser));
+						}
+					}
+					
+				}
+				else if (s.equals("Organs")) {
+					parser.next();
+					//AddChild(new Organs(this, parser));
+				}
+			}
+				
+		}
+	}
+	
+	public Node GenerateXml(Document d) {
+		Element e = d.createElement(GetName());
+		e.setAttribute("name", name);
+		e.setAttribute("id", id);
+		e.setAttribute("type", type);
+		for(InterfaceMember child : childs)
+			e.appendChild(child.GenerateXml(d));
+		return e;
+	}
+	
 	
 	@Override
 	public String GetName() {
-		// TODO Auto-generated method stub
-		return this.getClass().getName();
+		return this.getClass().getSimpleName();
 	}
 }

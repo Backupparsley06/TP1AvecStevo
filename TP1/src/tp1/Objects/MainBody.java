@@ -1,5 +1,10 @@
 package tp1.Objects;
 
+import javax.json.*;
+import javax.json.stream.*;
+import static javax.json.stream.JsonParser.Event.*;
+
+import org.w3c.dom.*;
 import org.xml.sax.Attributes;
 
 public class MainBody extends AbstractMember {
@@ -11,16 +16,49 @@ public class MainBody extends AbstractMember {
 		this.bodyName = bodyName;
 		this.bodyID = bodyID;
 	}
+	public MainBody(InterfaceMember parent, JsonParser parser) {
+		super(parent);
+		JsonParser.Event event = null;
+		for (;event != END_OBJECT;) {
+			event = parser.next();
+			if (event == KEY_NAME) {
+				String s = parser.getString();
+				parser.next();
+				if(s.equals("bodyName")) {
+					bodyName = parser.getString();
+				}
+				else if (s.equals("bodyID")) {
+					bodyID = parser.getString();
+				}
+				else if (s.equals("Systems")) {					
+					AddChild(new Systems(this, parser));
+				}
+				else if (s.equals("Organs")) {
+					AddChild(new Organs(this, parser));
+				}
+			}
+				
+		}
+	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "\"" + GetName() + "\" : {\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"bodyName\" : \"" + bodyName + "\",\n" +
-				String.format("%1$"+ (stackLevel + 1) + "s", " ").replace(' ', '\t') + "\"bodyID\" : " + bodyID + ",\n";
-		
-		for(int i = 0; i < childs.size(); i++)
-			json += childs.get(i).GenerateJson(stackLevel + 1) + (i < childs.size() - 1 ? "," : "") + "\n";
-		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "}";
+	public Node GenerateXml(Document d) {
+		Element e = d.createElement(GetName());
+		e.setAttribute("bodyName", bodyName);
+		e.setAttribute("bodyID", bodyID);
+		for(InterfaceMember child : childs)
+			e.appendChild(child.GenerateXml(d));
+		return e;
+	}
+	
+	@Override
+	public void GenerateJson(JsonGenerator gen) {
+		gen.writeStartObject(GetName())
+			.write("bodyName", bodyName)
+			.write("bodyID", Integer.parseInt(bodyID));
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd();
 	}
 	
 	@Override

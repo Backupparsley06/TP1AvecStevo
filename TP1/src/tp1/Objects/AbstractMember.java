@@ -2,7 +2,10 @@ package tp1.Objects;
 
 import java.util.ArrayList;
 
-import org.xml.sax.Attributes;
+import javax.json.stream.JsonGenerator;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public abstract class AbstractMember implements InterfaceMember{
 
@@ -14,6 +17,12 @@ public abstract class AbstractMember implements InterfaceMember{
 	}
 	
 	public abstract String GetName();
+	
+	@Override
+	public Node GenerateXml(Document d) {
+		return null;
+	}
+	
 	
 	@Override
 	public void AddChild(InterfaceMember child)
@@ -28,12 +37,7 @@ public abstract class AbstractMember implements InterfaceMember{
 	}
 	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		// TODO Auto-generated method stub
-		String s = "";
-		for (InterfaceMember child: childs)
-			s += child.GenerateJson(stackLevel + 1);
-		return s;
+	public void GenerateJson(JsonGenerator gen) {
 	}
 	
 }

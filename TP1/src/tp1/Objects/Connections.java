@@ -1,17 +1,44 @@
 package tp1.Objects;
 
+import static javax.json.stream.JsonParser.Event.*;
+
+import javax.json.stream.JsonGenerator;
+import javax.json.stream.JsonParser;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
 public class Connections extends AbstractMember{
 	Connections(InterfaceMember parent) {
 		super(parent);
 	}
 	
+	public Connections(InterfaceMember parent, JsonParser parser) {
+		super(parent);
+		JsonParser.Event event = null;
+		for (;event != END_ARRAY;) {
+			event = parser.next();
+			if (event == START_OBJECT) {
+				AddChild(new Connection(this, parser));
+			}
+				
+		}
+	}
+	
 	@Override
-	public String GenerateJson(int stackLevel) {
-		String json =  String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "\"" + GetName() + "\" : [\n";
-		
-		for(int i = 0; i < childs.size(); i++)
-			json += childs.get(i).GenerateJson(stackLevel + 1) + (i < childs.size() - 1 ? "," : "") + "\n";
-		return json + String.format("%1$"+ stackLevel + "s", " ").replace(' ', '\t') + "]";
+	public void GenerateJson(JsonGenerator gen) {
+		gen = gen.writeStartArray(GetName());
+		for(InterfaceMember child : childs)
+			child.GenerateJson(gen);
+		gen.writeEnd();
+	}
+	
+	public Node GenerateXml(Document d) {
+		Element e = d.createElement(GetName());
+		for(InterfaceMember child : childs)
+			e.appendChild(child.GenerateXml(d));
+		return e;
 	}
 	
 	@Override
