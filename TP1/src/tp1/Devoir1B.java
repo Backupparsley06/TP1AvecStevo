@@ -4,6 +4,9 @@
 
 package tp1;
 
+import tp1.Objects.Header;
+import tp1.Objects.MemberFactory;
+
 /**
  * Fichier de base pour le Devoir1B du cours IFT287
  *
@@ -39,6 +42,14 @@ public class Devoir1B
         System.out.println("Debut de la conversion du fichier " + nomFichierJSON + " vers le fichier " + nomFichierXML);
 
         // Votre code de conversion devrait aller ici
+        
+        try {
+        	Header header = MemberFactory.CreateHeader();
+			header.CreateFromJsonFile(nomFichierJSON);
+			header.GenerateXmlFile(nomFichierXML);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
         
         System.out.println("Conversion terminee.");
 

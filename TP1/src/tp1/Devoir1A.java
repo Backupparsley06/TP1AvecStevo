@@ -55,7 +55,7 @@ public class Devoir1A
         	
         	handler.CreateJsonFile(nomFichierJSON);
         } catch (Exception e) {
-        	System.out.println(e.getMessage());
+        	e.printStackTrace();
         }
 
         

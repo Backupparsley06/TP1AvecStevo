@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import javax.json.stream.JsonGenerator;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 public abstract class AbstractMember implements InterfaceMember{
 
 	InterfaceMember parent;
@@ -14,6 +17,12 @@ public abstract class AbstractMember implements InterfaceMember{
 	}
 	
 	public abstract String GetName();
+	
+	@Override
+	public Node GenerateXml(Document d) {
+		return null;
+	}
+	
 	
 	@Override
 	public void AddChild(InterfaceMember child)
@@ -29,7 +38,6 @@ public abstract class AbstractMember implements InterfaceMember{
 	
 	@Override
 	public void GenerateJson(JsonGenerator gen) {
-
 	}
 	
 }
