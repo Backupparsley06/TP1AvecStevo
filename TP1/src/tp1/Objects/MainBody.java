@@ -1,6 +1,5 @@
 package tp1.Objects;
 
-import javax.json.*;
 import javax.json.stream.*;
 import static javax.json.stream.JsonParser.Event.*;
 
