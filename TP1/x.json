@@ -12,7 +12,7 @@
                     {
                         "id":0,
                         "name":"Heart",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Atrium",
                                 "name":"Left atrium",
@@ -56,7 +56,7 @@
                     {
                         "id":1,
                         "name":"Aorta connection",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Ascending aorta",
@@ -86,7 +86,7 @@
                     {
                         "id":2,
                         "name":"Coronary",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Left coronary",
@@ -218,7 +218,7 @@
                     {
                         "id":3,
                         "name":"Pulmonary",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Pulmonary trunk",
@@ -321,7 +321,7 @@
                     {
                         "id":4,
                         "name":"Head and thoracic",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Left subclavian",
@@ -1268,7 +1268,7 @@
                     {
                         "id":5,
                         "name":"Left arm",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Axillary",
@@ -1490,7 +1490,7 @@
                     {
                         "id":6,
                         "name":"Right arm",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Axillary",
@@ -1712,7 +1712,7 @@
                     {
                         "id":7,
                         "name":"Abdominal",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Abdominal aorta",
@@ -2403,7 +2403,7 @@
                     {
                         "id":8,
                         "name":"Right leg",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Common Iliac",
@@ -2795,7 +2795,7 @@
                     {
                         "id":9,
                         "name":"Left leg",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Artery",
                                 "name":"Common Iliac",
@@ -3187,7 +3187,7 @@
                     {
                         "id":10,
                         "name":"Vena cava drain",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Vein",
                                 "name":"Superior Vena Cava",
@@ -3216,7 +3216,7 @@
                     {
                         "id":0,
                         "name":"Air",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"Nose",
                                 "name":"Nose",
@@ -3416,7 +3416,7 @@
                     {
                         "id":0,
                         "name":"Food",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"DigestiveTract",
                                 "name":"Pharynx",
@@ -3625,7 +3625,7 @@
                     {
                         "id":1,
                         "name":"Salivary",
-                        "Connectible":[
+                        "Connectibles":[
                             {
                                 "type":"SalivaryDuct",
                                 "name":"Left parotid duct",

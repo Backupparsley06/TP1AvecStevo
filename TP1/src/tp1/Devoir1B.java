@@ -5,7 +5,6 @@
 package tp1;
 
 import tp1.Objects.Header;
-import tp1.Objects.MemberFactory;
 
 /**
  * Fichier de base pour le Devoir1B du cours IFT287
@@ -44,9 +43,9 @@ public class Devoir1B
         // Votre code de conversion devrait aller ici
         
         try {
-        	Header header = MemberFactory.CreateHeader();
-			header.CreateFromJsonFile(nomFichierJSON);
-			header.GenerateXmlFile(nomFichierXML);
+        	Header header = new Header();
+			header.createFromJsonFile(nomFichierJSON);
+			header.generateXmlFile(nomFichierXML);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
