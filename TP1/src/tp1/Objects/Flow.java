@@ -1,71 +1,73 @@
 package tp1.Objects;
 
-import static javax.json.stream.JsonParser.Event.*;
 
+import java.util.ArrayList;
+
+import javax.json.*;
 import javax.json.stream.JsonGenerator;
-import javax.json.stream.JsonParser;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-public class Flow extends AbstractMember{
+public class Flow{
 	String id;
 	String name;
-	Flow(InterfaceMember parent, String id, String name) {
-		super(parent);
+	ArrayList<Connectible> connectibles;
+	ArrayList<Connection> connections;
+	public Flow(String id, String name) {
 		this.id = id;
 		this.name = name;
+		connectibles = new ArrayList<Connectible>();
+		connections = new ArrayList<Connection>();
 	}
 	
-	public Flow(InterfaceMember parent, JsonParser parser) {
-		super(parent);
-		JsonParser.Event event = null;
-		for (;event != END_OBJECT;) {
-			event = parser.next();
-			if (event == KEY_NAME) {
-				String s = parser.getString();
-				parser.next();
-				if(s.equals("id")) {
-					id = parser.getString();
-				}
-				else if (s.equals("name")) {
-					name = parser.getString();
-				}
-				else if (s.equals("Connectible")) {
-					AddChild(new Connectible(this, parser));
-				}
-				else if (s.equals("Connections")) {
-					AddChild(new Connections(this, parser));
-				}
-			}
-				
-		}
+	public Flow(JsonObject jObject) {
+		this(jObject.get("id").toString(),
+				((JsonString)jObject.get("name")).getString());
+		((JsonArray)jObject.get("Connectibles")).forEach(connectible -> connectibles.add(new Connectible((JsonObject)connectible)));
+		((JsonArray)jObject.get("Connections")).forEach(connection -> connections.add(new Connection((JsonObject)connection)));
 	}
 	
-	@Override
-	public Node GenerateXml(Document d) {
-		Element e = d.createElement(GetName());
+	public void addConnectible(Connectible connectible) {
+		connectibles.add(connectible);
+	}
+	
+	public void addConnection(Connection connection) {
+		connections.add(connection);
+	}
+	
+	public Connection getLastConnection() {
+		return connections.get(connections.size() - 1);
+	}
+	
+	public Node generateXml(Document d) {
+		Element e = d.createElement(getName());
 		e.setAttribute("id", id);
 		e.setAttribute("name", name);
-		for(InterfaceMember child : childs)
-			e.appendChild(child.GenerateXml(d));
+		Element eConnectibles = d.createElement("Connectible");
+		connectibles.forEach(connectible -> eConnectibles.appendChild(connectible.generateXml(d)));
+		e.appendChild(eConnectibles);
+		Element eConnections = d.createElement("Connections");
+		connections.forEach(organ -> eConnections.appendChild(organ.generateXml(d)));
+		e.appendChild(eConnections);
 		return e;
 	}
 	
-	@Override
-	public void GenerateJson(JsonGenerator gen) {
+	public void generateJson(JsonGenerator gen) {
 		gen.writeStartObject()
 			.write("id", Integer.parseInt(id))
-			.write("name", name);
-		for(InterfaceMember child : childs)
-			child.GenerateJson(gen);
-		gen.writeEnd();
+			.write("name", name)
+			.writeStartArray("Connectibles");
+		connectibles.forEach(connectible -> connectible.generateJson(gen));
+		gen.writeEnd()
+			.writeStartArray("Connections");
+		connections.forEach(connections -> connections.generateJson(gen));
+		gen.writeEnd()
+			.writeEnd();
 	}
 	
-	@Override
-	public String GetName() {
-		// TODO Auto-generated method stub
+	public String getName() {
 		return this.getClass().getSimpleName();
 	}
 }

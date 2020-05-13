@@ -1,67 +1,73 @@
 package tp1.Objects;
 
+import javax.json.*;
 import javax.json.stream.*;
-import static javax.json.stream.JsonParser.Event.*;
+
+import java.util.ArrayList;
 
 import org.w3c.dom.*;
-import org.xml.sax.Attributes;
 
-public class MainBody extends AbstractMember {
+public class MainBody{
 	String bodyName;
 	String bodyID;
-	public MainBody(InterfaceMember parent, Attributes attributes, String bodyName, String bodyID)
+	ArrayList<System> systems;
+	ArrayList<Organ> organs;
+	
+	public MainBody(String bodyName, String bodyID)
 	{
-		super(parent);
 		this.bodyName = bodyName;
 		this.bodyID = bodyID;
-	}
-	public MainBody(InterfaceMember parent, JsonParser parser) {
-		super(parent);
-		JsonParser.Event event = null;
-		for (;event != END_OBJECT;) {
-			event = parser.next();
-			if (event == KEY_NAME) {
-				String s = parser.getString();
-				parser.next();
-				if(s.equals("bodyName")) {
-					bodyName = parser.getString();
-				}
-				else if (s.equals("bodyID")) {
-					bodyID = parser.getString();
-				}
-				else if (s.equals("Systems")) {					
-					AddChild(new Systems(this, parser));
-				}
-				else if (s.equals("Organs")) {
-					AddChild(new Organs(this, parser));
-				}
-			}
-				
-		}
+		systems = new ArrayList<System>();
+		organs = new ArrayList<Organ>();
+		
 	}
 	
-	@Override
-	public Node GenerateXml(Document d) {
-		Element e = d.createElement(GetName());
+	public MainBody(JsonObject jObject) {
+		this(((JsonString)jObject.get("bodyName")).getString(),
+				jObject.get("bodyID").toString());
+		((JsonArray)jObject.get("Systems")).forEach(system -> systems.add(new System((JsonObject)system)));
+		((JsonArray)jObject.get("Organs")).forEach(organ -> organs.add(new Organ((JsonObject)organ)));
+	}
+	
+	public void addSystem(System system) {
+		systems.add(system);
+	}
+	
+	public void addOrgan(Organ organ) {
+		organs.add(organ);
+	}
+	
+	public System getLastSystem() {
+		return systems.get(systems.size() - 1);
+	}
+
+	public Node generateXml(Document d) {
+		Element e = d.createElement(getName());
 		e.setAttribute("bodyName", bodyName);
 		e.setAttribute("bodyID", bodyID);
-		for(InterfaceMember child : childs)
-			e.appendChild(child.GenerateXml(d));
+		Element eSystems = d.createElement("Systems");
+		systems.forEach(system -> eSystems.appendChild(system.generateXml(d)));
+		e.appendChild(eSystems);
+		Element eOrgans = d.createElement("Organs");
+		organs.forEach(organ -> eOrgans.appendChild(organ.generateXml(d)));
+		e.appendChild(eOrgans);
 		return e;
 	}
 	
-	@Override
-	public void GenerateJson(JsonGenerator gen) {
-		gen.writeStartObject(GetName())
+	public void generateJson(JsonGenerator gen) {
+		gen.writeStartObject(getName())
 			.write("bodyName", bodyName)
-			.write("bodyID", Integer.parseInt(bodyID));
-		for(InterfaceMember child : childs)
-			child.GenerateJson(gen);
-		gen.writeEnd();
+			.write("bodyID", Integer.parseInt(bodyID))
+			.writeStartArray("Systems");
+		systems.forEach(system -> system.generateJson(gen));
+		gen.writeEnd()
+			.writeStartArray("Organs");
+		organs.forEach(organ -> organ.generateJson(gen));
+		gen.writeEnd().writeEnd();
 	}
 	
-	@Override
-	public String GetName() {
+	
+	public String getName() {
 		return this.getClass().getSimpleName();
 	}
 	

@@ -1,67 +1,56 @@
 package tp1.Objects;
 
-import static javax.json.stream.JsonParser.Event.*;
 
+import java.util.ArrayList;
+
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 import javax.json.stream.JsonGenerator;
-import javax.json.stream.JsonParser;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-public class Connection extends AbstractMember{
+public class Connection{
 	String id;
-	Connection(InterfaceMember parent, String id) {
-		super(parent);
+	ArrayList<String> tos;
+	public Connection(String id) {
 		this.id = id;
+		tos = new ArrayList<String>();
 	}
 	
-	public Connection(InterfaceMember parent, JsonParser parser) {
-		super(parent);
-		JsonParser.Event event = null;
-		for (;event != END_OBJECT;) {
-			event = parser.next();
-			if (event == KEY_NAME) {
-				String s = parser.getString();
-				parser.next();
-				if(s.equals("id")) {
-					id = parser.getString();
-				}
-				else if (s.equals("to")) {
-					for (;event != END_ARRAY;) {
-						event = parser.next();
-						if (event == VALUE_NUMBER) {
-							AddChild(new to(this, parser));
-						}
-					}
-				}
-			}
-				
-		}
+	public void addTo(String to) {
+		tos.add(to);
 	}
 	
-	@Override
-	public Node GenerateXml(Document d) {
-		Element e = d.createElement(GetName());
+	public Connection(JsonObject jObject) {
+		this(jObject.get("id").toString());
+		((JsonArray)jObject.get("to")).forEach(to -> tos.add(to.toString()));
+	}
+		
+	public Node generateXml(Document d) {
+		Element e = d.createElement(getName());
 		e.setAttribute("id", id);
-		for(InterfaceMember child : childs)
-			e.appendChild(child.GenerateXml(d));
+		tos.forEach(to -> e.appendChild(generateTo(d,to)));
 		return e;
 	}
 	
-	@Override
-	public void GenerateJson(JsonGenerator gen) {
+	private Node generateTo(Document d, String to) {
+		Element e = d.createElement("to");
+		e.setAttribute("id", to);
+		return e;
+	}
+	
+	public void generateJson(JsonGenerator gen) {
 		gen.writeStartObject()
 			.write("id", Integer.parseInt(id))
 			.writeStartArray("to");
-		for(InterfaceMember child : childs)
-			child.GenerateJson(gen);
-		gen.writeEnd().writeEnd();
+		tos.forEach(to -> gen.write(Integer.parseInt(to)));
+		gen.writeEnd()
+			.writeEnd();
 	}
 	
-	@Override
-	public String GetName() {
-		// TODO Auto-generated method stub
+	public String getName() {
 		return this.getClass().getSimpleName();
 	}
 }

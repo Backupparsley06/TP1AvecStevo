@@ -18,35 +18,40 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 
-import tp1.IFT287Exception;
+public class Header {
 
-
-public class Header extends AbstractMember{
-
-	Header() {
-		super(null);
+	private MainBody mainBody;
+	
+	public Header() {
+		mainBody = null;
 	}
 	
-	public void GenerateJsonFile(String fileName) throws Exception{
+	public MainBody getMainBody(){
+		return mainBody;
+	}
+	
+	public void setMainBody(MainBody mainBody){
+		this.mainBody = mainBody;
+	}
+	
+	public void generateJsonFile(String fileName) throws Exception{
 		FileWriter writer = new FileWriter(fileName);
 		Map<String, Object> config = new HashMap<String, Object>(1);
 		config.put(JsonGenerator.PRETTY_PRINTING, true);
-		//StringWriter w = new StringWriter();
+		
 		JsonGeneratorFactory f = Json.createGeneratorFactory(config);
 
 		JsonGenerator gen = f.createGenerator(writer).writeStartObject();
-		for(InterfaceMember child : childs)
-			child.GenerateJson(gen);
+		
+		mainBody.generateJson(gen);
 		gen.writeEnd().close();
-
 	}
 	
-	public void GenerateXmlFile(String fileName) throws Exception{
+	public void generateXmlFile(String fileName) throws Exception{
 		DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
 		Document document = f.newDocumentBuilder().newDocument();
 		
-		for(InterfaceMember child : childs)
-			document.appendChild(child.GenerateXml(document));
+		document.appendChild(mainBody.generateXml(document));
 		
 		FileOutputStream output = new FileOutputStream(fileName);
 		PrintStream out = new PrintStream(output);
@@ -62,28 +67,10 @@ public class Header extends AbstractMember{
 
 	}
 	
-	public void CreateFromJsonFile(String fileName) throws Exception{
-		JsonParser parser = Json.createParser(new FileReader(fileName));
-		while (parser.hasNext()){
-			JsonParser.Event event = parser.next();
-			switch(event)
-			{
-				case START_OBJECT:
-					parser.next();
-					AddChild(new MainBody(this, parser));
-					break;
-				case END_OBJECT:
-					break;
-				default:
-					throw new IFT287Exception("Erreur: structure invalide");
-			}
-		}
-
+	public void createFromJsonFile(String fileName) throws Exception{
+		mainBody = new MainBody(((JsonObject)Json.createReader(new FileReader(fileName)).read())
+				.getJsonObject("MainBody"));
 	}
 
-	@Override
-	public String GetName() {
-		return null;
-	}
 
 }

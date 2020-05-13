@@ -5,7 +5,6 @@
 package tp1;
 
 import java.io.File;
-import java.io.FileWriter;
 
 import javax.xml.parsers.*;
 
@@ -42,8 +41,6 @@ public class Devoir1A
         String nomFichierJSON = args[1];
         
         System.out.println("Debut de la conversion du fichier " + nomFichierXML + " vers le fichier " + nomFichierJSON);
-
-        // Votre code de conversion devrait aller ici
         
         
         try {
@@ -53,7 +50,7 @@ public class Devoir1A
         	ParcerXml handler = new ParcerXml();
         	parser.parse(new File(nomFichierXML), handler);
         	
-        	handler.CreateJsonFile(nomFichierJSON);
+        	handler.createJsonFile(nomFichierJSON);
         } catch (Exception e) {
         	e.printStackTrace();
         }
