@@ -59,7 +59,7 @@ public class Header {
 		Transformer optimusPrime = allSpark.newTransformer();
 		optimusPrime.setOutputProperty(OutputKeys.INDENT, "yes");
 		optimusPrime.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "HumanBody.dtd");
-		optimusPrime.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "1");
+		optimusPrime.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 		DOMSource source = new DOMSource(document);
 		StreamResult result = new StreamResult(out);
 		optimusPrime.transform(source, result);
